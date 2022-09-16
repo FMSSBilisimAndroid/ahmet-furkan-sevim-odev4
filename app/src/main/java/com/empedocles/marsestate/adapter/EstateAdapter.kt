@@ -12,13 +12,12 @@ class EstateAdapter(private val estateList: ArrayList<Estate>)
 
     class ItemHolder(private val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(estate : Estate){
-            binding.estate = estate
             binding.itemImg.downloadFromUrl(estate.imageUrl)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-        val itemBinding = FeedItemBinding.inflate(LayoutInflater.from(parent.context), false)
+        val itemBinding = FeedItemBinding.inflate(LayoutInflater.from(parent.context), parent,false)
         return ItemHolder(itemBinding)
     }
 

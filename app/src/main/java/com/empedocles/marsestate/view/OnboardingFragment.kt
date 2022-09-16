@@ -10,7 +10,7 @@ import com.empedocles.marsestate.R
 import com.empedocles.marsestate.databinding.FragmentOnBoardingBinding
 import com.empedocles.marsestate.databinding.FragmentProductBinding
 
-class onBoarding : Fragment() {
+class OnboardingFragment : Fragment() {
     private lateinit var binding : FragmentOnBoardingBinding
 
     override fun onCreateView(

@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
-            android:text="@{estate.estateType}"
+            android:text="123123213"
             android:textColor="@color/white"
             android:textSize="9sp"
             android:textStyle="bold"
@@ -53,7 +53,7 @@
                 android:id="@+id/item_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{estate.estatePrice}" />
+                android:text="12312321}" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                     android:id="@+id/item_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{estate.estateId}" />
+                    android:text="123123" />
             </LinearLayout>
 
 

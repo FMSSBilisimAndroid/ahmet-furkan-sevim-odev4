@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onBoarding"
-        android:name="com.empedocles.marsestate.view.onBoarding"
+        android:name="com.empedocles.marsestate.view.OnboardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.empedocles.marsestate.view.feedFragment"
+        android:name="com.empedocles.marsestate.view.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.empedocles.marsestate.view.productFragment"
+        android:name="com.empedocles.marsestate.view.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" />
 </navigation>
