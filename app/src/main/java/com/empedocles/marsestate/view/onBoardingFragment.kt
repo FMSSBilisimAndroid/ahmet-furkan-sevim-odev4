@@ -22,7 +22,10 @@ class onBoarding : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.apply {  }
+        binding.apply {
+            onBoardingButton.setOnClickListener{
+                findNavController().navigate(R.id.action_onBoarding_to_feedFragment)
+            }
+        }
     }
-
 }
