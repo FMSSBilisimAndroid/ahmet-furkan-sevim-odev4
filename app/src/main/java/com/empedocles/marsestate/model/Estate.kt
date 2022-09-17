@@ -1,7 +1,10 @@
 package com.empedocles.marsestate.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Estate(
     @SerializedName("price")
     val estatePrice:Int,
@@ -11,4 +14,4 @@ data class Estate(
     val estateType: String,
     @SerializedName("img_src")
     val imageUrl : String
-)
+) : Parcelable

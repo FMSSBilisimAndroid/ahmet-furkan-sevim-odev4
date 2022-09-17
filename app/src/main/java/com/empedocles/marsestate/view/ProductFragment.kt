@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.empedocles.marsestate.R
-import com.empedocles.marsestate.databinding.FragmentFeedBinding
 import com.empedocles.marsestate.databinding.FragmentProductBinding
+import com.empedocles.marsestate.model.Estate
+import com.empedocles.marsestate.util.downloadFromUrl
 
 class ProductFragment : Fragment() {
     private lateinit var binding : FragmentProductBinding
@@ -17,6 +17,16 @@ class ProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProductBinding.inflate(inflater)
+        init()
         return binding.root
     }
+
+
+    fun init(){
+        val estate = arguments?.getParcelable<Estate>("estate")
+        binding.estate = estate
+        binding
+        estate?.let { binding.productImg?.downloadFromUrl(it.imageUrl) }
+    }
 }
+

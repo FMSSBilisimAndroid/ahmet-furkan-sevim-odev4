@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="estate"
+            type="com.empedocles.marsestate.model.Estate" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="14dp"
-            android:text="For Sale"
+            android:text="@{`For ` + estate.estateType}"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -41,7 +44,7 @@
             />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/backIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -78,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="123123"
+            android:text="@{estate.estateId}"
             android:textSize="23sp"
             app:layout_constraintStart_toStartOf="@+id/materialDivider"
             app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
@@ -88,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="123123$"
+            android:text="@{Integer.toString(estate.estatePrice) + '$'}"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold"

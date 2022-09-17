@@ -29,5 +29,11 @@
         android:id="@+id/productFragment"
         android:name="com.empedocles.marsestate.view.ProductFragment"
         android:label="fragment_product"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_product" >
+        <argument
+            android:name="estate"
+            app:argType="com.empedocles.marsestate.model.Estate"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
