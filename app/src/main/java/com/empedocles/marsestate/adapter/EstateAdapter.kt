@@ -2,10 +2,12 @@ package com.empedocles.marsestate.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.empedocles.marsestate.databinding.FeedItemBinding
 import com.empedocles.marsestate.model.Estate
 import com.empedocles.marsestate.util.downloadFromUrl
+import com.empedocles.marsestate.view.FeedFragment
 
 class EstateAdapter(private val estateList: ArrayList<Estate>)
     : RecyclerView.Adapter<EstateAdapter.ItemHolder>() {
@@ -13,6 +15,8 @@ class EstateAdapter(private val estateList: ArrayList<Estate>)
     class ItemHolder(private val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(estate : Estate){
             binding.itemImg.downloadFromUrl(estate.imageUrl)
+            binding.estate = estate
+            binding.root.context as? LifecycleOwner
         }
     }
 

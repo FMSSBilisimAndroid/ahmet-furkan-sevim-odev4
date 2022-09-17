@@ -8,18 +8,24 @@
         <variable
             name="estate"
             type="com.empedocles.marsestate.model.Estate" />
+
+        <variable
+            name="FeedViewModel"
+            type="com.empedocles.marsestate.viewmodel.FeedViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:padding="5dp"
+        >
 
         <ImageView
             android:id="@+id/item_img"
             android:layout_width="160dp"
             android:layout_height="204dp"
             android:background="@drawable/feed_item_img"
+            android:clipToOutline="true"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,43 +38,35 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
-            android:text="123123213"
+            android:text="@{`For ` + estate.estateType}"
             android:textColor="@color/white"
             android:textSize="9sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/item_img"
+            app:layout_constraintTop_toTopOf="@id/item_img" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:text="@{Integer.toString(estate.estatePrice) + '$'}"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/item_img"
+            app:layout_constraintTop_toBottomOf="@+id/item_img" />
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_img">
-
-            <TextView
-                android:id="@+id/item_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12312321}" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/item_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="123123" />
-            </LinearLayout>
-
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12.5dp"
+            android:text="@{estate.estateId}"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/item_img"
+            app:layout_constraintTop_toBottomOf="@+id/item_img" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,11 +31,14 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
         viewModel.getFromApi()
-        binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
-        binding.recyclerView.adapter = estateAdapter
+        binding.recyclerView.apply {
+            layoutManager = GridLayoutManager(context, 2)
+
+            adapter = estateAdapter
+
+        }
         observeLiveData()
     }
-
 
     fun observeLiveData(){
         viewModel.estates.observe(viewLifecycleOwner) {
