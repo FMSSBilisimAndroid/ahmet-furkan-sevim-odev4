@@ -6,11 +6,9 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.empedocles.marsestate.R
 import com.empedocles.marsestate.databinding.FeedItemBinding
 import com.empedocles.marsestate.model.Estate
 import com.empedocles.marsestate.util.downloadFromUrl
-import com.empedocles.marsestate.view.FeedFragment
 import com.empedocles.marsestate.view.FeedFragmentDirections
 
 class EstateAdapter(private val estateList: ArrayList<Estate>)
@@ -19,7 +17,6 @@ class EstateAdapter(private val estateList: ArrayList<Estate>)
     class ItemHolder(private val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(estate : Estate){
             var navController: NavController? = null
-
             binding.itemImg.downloadFromUrl(estate.imageUrl)
             binding.estate = estate
             binding.root.setOnClickListener{

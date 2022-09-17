@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.empedocles.marsestate.databinding.FragmentProductBinding
 import com.empedocles.marsestate.model.Estate
 import com.empedocles.marsestate.util.downloadFromUrl
@@ -21,12 +22,15 @@ class ProductFragment : Fragment() {
         return binding.root
     }
 
-
-    fun init(){
+    private fun init(){
         val estate = arguments?.getParcelable<Estate>("estate")
-        binding.estate = estate
-        binding
-        estate?.let { binding.productImg?.downloadFromUrl(it.imageUrl) }
+        binding.apply {
+            binding.estate = estate
+            backIcon.setOnClickListener{
+                findNavController().navigateUp()
+            }
+            estate?.let { productImg?.downloadFromUrl(it.imageUrl) }
+        }
     }
 }
 
