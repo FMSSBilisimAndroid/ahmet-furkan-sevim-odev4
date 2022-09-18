@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.empedocles.marsestate.databinding.FragmentProductBinding
 import com.empedocles.marsestate.model.Estate
+import com.empedocles.marsestate.util.circularProgressFactory
 import com.empedocles.marsestate.util.downloadFromUrl
 
 class ProductFragment : Fragment() {
@@ -29,7 +30,7 @@ class ProductFragment : Fragment() {
             backIcon.setOnClickListener{
                 findNavController().navigateUp()
             }
-            estate?.let { productImg?.downloadFromUrl(it.imageUrl) }
+            estate?.let { productImg?.downloadFromUrl(it.imageUrl, circularProgressFactory(binding.root.context)) }
         }
     }
 }

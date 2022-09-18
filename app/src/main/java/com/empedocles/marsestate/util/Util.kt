@@ -7,14 +7,22 @@ import android.text.Spanned
 import android.widget.ImageView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.empedocles.marsestate.R
+
 
 // Helper function to download image
-fun ImageView.downloadFromUrl(url :String){
+fun ImageView.downloadFromUrl(url :String, circularProgressDrawable: CircularProgressDrawable){
     Glide.with(context)
         .load(url)
+        .placeholder(circularProgressDrawable)
         .into(this)
+}
+
+fun circularProgressFactory(context: Context): CircularProgressDrawable{
+    val circularProgressDrawable = CircularProgressDrawable(context)
+    circularProgressDrawable.strokeWidth = 5f
+    circularProgressDrawable.centerRadius = 30f
+    circularProgressDrawable.start()
+    return circularProgressDrawable
 }
 
 fun String.fromHtml(): Spanned {
