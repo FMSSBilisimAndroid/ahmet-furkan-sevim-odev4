@@ -34,13 +34,28 @@ class FeedFragment : Fragment() {
             adapter = estateAdapter
         }
         observeLiveData()
+        binding.feedProgressBar.visibility = View.VISIBLE
+        binding.recyclerView.visibility = View.GONE
+
     }
 
     // Observe viewmodel livedata changes
     private fun observeLiveData() {
         viewModel.estates.observe(viewLifecycleOwner) {
             it?.let {
+                binding.recyclerView.visibility = View.VISIBLE
                 estateAdapter.updateEstateList(it)
+            }
+        }
+        viewModel.loading.observe(viewLifecycleOwner){
+            it?.let {
+                if (it){
+                    binding.feedProgressBar.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.GONE
+                }else{
+                    binding.feedProgressBar.visibility = View.GONE
+                    binding.recyclerView.visibility = View.VISIBLE
+                }
             }
         }
     }
