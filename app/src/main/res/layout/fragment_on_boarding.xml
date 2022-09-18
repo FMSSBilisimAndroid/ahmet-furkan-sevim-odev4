@@ -30,10 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:fontFamily="@font/nunito_sans_semibold"
+            android:fontFamily="@font/nunito_extrabold"
             android:text="Let’s Explore the \nSolar System \nwith Explorer"
             android:textColor="#000"
             android:textSize="40sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/onBoarding_h1" />
@@ -42,7 +43,7 @@
             android:id="@+id/onBoarding_banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/on_boarding_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +51,10 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/onBoarding_button"
             android:layout_width="345dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/onBoarding_button"
+            android:layout_marginTop="8dp"
             android:background="@drawable/onboarding_button"
             android:drawableEnd="@drawable/ic_rocket"
             android:fontFamily="@font/open_sans_bold"

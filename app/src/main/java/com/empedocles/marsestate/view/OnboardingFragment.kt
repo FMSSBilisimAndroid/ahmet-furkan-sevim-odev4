@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.empedocles.marsestate.R
 import com.empedocles.marsestate.databinding.FragmentOnBoardingBinding
 import com.empedocles.marsestate.databinding.FragmentProductBinding
+import com.empedocles.marsestate.util.fromHtml
 
 class OnboardingFragment : Fragment() {
     private lateinit var binding : FragmentOnBoardingBinding
@@ -18,6 +19,7 @@ class OnboardingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentOnBoardingBinding.inflate(inflater)
+        binding.onBoardingH2.text = getString(R.string.string).fromHtml()
         return binding.root
     }
 

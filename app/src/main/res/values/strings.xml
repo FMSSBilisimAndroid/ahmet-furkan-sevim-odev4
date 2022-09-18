@@ -2,4 +2,9 @@
     <string name="app_name">marsEstate</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string">
+        <![CDATA[
+        <div>Let’s Explore the <br /><span style=\"color: #f9ad1a;\">Solar System</span> <br />with <span style=\"color: #f9ad1a\">Explorer</span></div>
+        ]]>
+</string>
 </resources>
