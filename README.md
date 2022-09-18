@@ -4,6 +4,10 @@ FMSS Bilişim Kotlin Bootcamp 4. Hafta Ödevi Mars Estate
 - 📫 How to reach me: ... [Linkedin Profile](https://www.linkedin.com/in/ahmetfurkansevim/)
 - 😄 Pronouns: ... He,Him
 
+## App Screen Recording
+
+https://user-images.githubusercontent.com/78302281/190914966-5e61d887-6dee-424a-badf-486fd9dcda04.mp4
+
 ## Main Features
 - MVVM
 - Data Binding
