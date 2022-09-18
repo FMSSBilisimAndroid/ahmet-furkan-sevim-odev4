@@ -1,4 +1,4 @@
-# ahmet-furkan-sevim-week3
+# ahmet-furkan-sevim-week4
 ## About
 FMSS Bilişim Kotlin Bootcamp 4. Hafta Ödevi Mars Estate
 - 📫 How to reach me: ... [Linkedin Profile](https://www.linkedin.com/in/ahmetfurkansevim/)
