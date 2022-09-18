@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.empedocles.marsestate.R
 import com.empedocles.marsestate.databinding.FragmentOnBoardingBinding
-import com.empedocles.marsestate.databinding.FragmentProductBinding
 import com.empedocles.marsestate.util.fromHtml
 
 class OnboardingFragment : Fragment() {
-    private lateinit var binding : FragmentOnBoardingBinding
+    private lateinit var binding: FragmentOnBoardingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOnBoardingBinding.inflate(inflater)
         binding.onBoardingH2.text = getString(R.string.string).fromHtml()
         return binding.root
@@ -25,7 +24,7 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            onBoardingButton.setOnClickListener{
+            onBoardingButton.setOnClickListener {
                 findNavController().navigate(R.id.action_onBoarding_to_feedFragment)
             }
         }

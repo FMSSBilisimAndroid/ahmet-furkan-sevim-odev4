@@ -12,15 +12,17 @@ import com.empedocles.marsestate.util.circularProgressFactory
 import com.empedocles.marsestate.util.downloadFromUrl
 import com.empedocles.marsestate.view.FeedFragmentDirections
 
-class EstateAdapter(private val estateList: ArrayList<Estate>)
-    : RecyclerView.Adapter<EstateAdapter.ItemHolder>() {
-
+class EstateAdapter(private val estateList: ArrayList<Estate>) :
+    RecyclerView.Adapter<EstateAdapter.ItemHolder>() {
     class ItemHolder(private val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(estate : Estate){
-            var navController: NavController? = null
-            binding.itemImg.downloadFromUrl(estate.imageUrl, circularProgressFactory(binding.root.context))
+        fun bind(estate: Estate) {
+            var navController: NavController?
+            binding.itemImg.downloadFromUrl(
+                estate.imageUrl,
+                circularProgressFactory(binding.root.context)
+            )
             binding.estate = estate
-            binding.root.setOnClickListener{
+            binding.root.setOnClickListener {
                 navController = Navigation.findNavController(itemView)
                 val action = FeedFragmentDirections.actionFeedFragmentToProductFragment(estate)
                 navController!!.navigate(action)
@@ -30,7 +32,8 @@ class EstateAdapter(private val estateList: ArrayList<Estate>)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-        val itemBinding = FeedItemBinding.inflate(LayoutInflater.from(parent.context), parent,false)
+        val itemBinding =
+            FeedItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemHolder(itemBinding)
     }
 
@@ -42,7 +45,7 @@ class EstateAdapter(private val estateList: ArrayList<Estate>)
         return estateList.size
     }
 
-    fun updateEstateList(newEstateList : List<Estate>){
+    fun updateEstateList(newEstateList: List<Estate>) {
         estateList.clear()
         estateList.addAll(newEstateList)
         notifyDataSetChanged()

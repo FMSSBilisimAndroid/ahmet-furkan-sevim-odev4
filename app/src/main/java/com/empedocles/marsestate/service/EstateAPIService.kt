@@ -7,8 +7,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class EstateAPIService {
-    companion object{
-        private val BASE_URL = "https://mars.udacity.com/"
+    companion object {
+        private const val BASE_URL = "https://mars.udacity.com/"
     }
 
     private val retrofit = Retrofit.Builder()
@@ -18,7 +18,7 @@ class EstateAPIService {
         .build()
         .create(EstateAPI::class.java)
 
-    fun getData():Single<List<Estate>>{
+    fun getData(): Single<List<Estate>> {
         return retrofit.getEstates()
     }
 }

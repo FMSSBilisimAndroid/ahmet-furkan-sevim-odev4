@@ -12,15 +12,16 @@ import io.reactivex.schedulers.Schedulers
 class FeedViewModel : ViewModel() {
     private val disposable = CompositeDisposable()
     private val service = EstateAPIService()
-
     val estates = MutableLiveData<List<Estate>>()
 
-    fun getFromApi(){
+    // RxJava implementation
+    // Get data with retrofit
+    fun getFromApi() {
         disposable.add(
             service.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<Estate>>(){
+                .subscribeWith(object : DisposableSingleObserver<List<Estate>>() {
                     override fun onSuccess(t: List<Estate>) {
                         estates.value = t
                     }
@@ -28,7 +29,8 @@ class FeedViewModel : ViewModel() {
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
                     }
-                }))
+                })
+        )
     }
 
 }

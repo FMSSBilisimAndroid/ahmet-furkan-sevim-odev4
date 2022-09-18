@@ -7,11 +7,11 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Estate(
     @SerializedName("price")
-    val estatePrice:Int,
+    val estatePrice: Int,
     @SerializedName("id")
     val estateId: String,
     @SerializedName("type")
     val estateType: String,
     @SerializedName("img_src")
-    val imageUrl : String
+    val imageUrl: String
 ) : Parcelable

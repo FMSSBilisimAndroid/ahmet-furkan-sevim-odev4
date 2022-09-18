@@ -12,25 +12,33 @@ import com.empedocles.marsestate.util.circularProgressFactory
 import com.empedocles.marsestate.util.downloadFromUrl
 
 class ProductFragment : Fragment() {
-    private lateinit var binding : FragmentProductBinding
+    private lateinit var binding: FragmentProductBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProductBinding.inflate(inflater)
         init()
         return binding.root
     }
 
-    private fun init(){
+    // Set data to layout
+    // Get data from arguments
+    // Set listener to navigate up
+    private fun init() {
         val estate = arguments?.getParcelable<Estate>("estate")
         binding.apply {
             binding.estate = estate
-            backIcon.setOnClickListener{
+            backIcon.setOnClickListener {
                 findNavController().navigateUp()
             }
-            estate?.let { productImg?.downloadFromUrl(it.imageUrl, circularProgressFactory(binding.root.context)) }
+            estate?.let {
+                productImg.downloadFromUrl(
+                    it.imageUrl,
+                    circularProgressFactory(binding.root.context)
+                )
+            }
         }
     }
 }
