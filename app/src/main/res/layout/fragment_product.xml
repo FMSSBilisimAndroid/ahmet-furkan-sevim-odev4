@@ -16,16 +16,15 @@
         tools:context=".view.ProductFragment">
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/product_img"
             android:layout_width="match_parent"
-            android:layout_height="384dp"
-            android:background="@drawable/product_img_bg"
-            android:clipToOutline="true"
+            android:layout_height="348dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.product_img"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
